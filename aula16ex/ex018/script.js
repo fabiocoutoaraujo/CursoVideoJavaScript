@@ -18,5 +18,5 @@ function adicionar() {
 }
 
 function finalizar() {
-
+    alert('Testando integração com o GitHub');
 }
