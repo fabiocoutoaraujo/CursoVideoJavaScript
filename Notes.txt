@@ -1,0 +1,56 @@
+# No JavaScript moderno, além do utilizar a palavra VAR, também podemos usar a palavra LET.
+
+# Identificadores (variáveis) NÃO podem começar com NÚMEROS
+
+# Maiúscula e minúsculas fazem diferença
+
+# Tipos primitivos
+    # String -> "Google", 'JavaScript', `Maria`
+    # Number -> 0.5, -15.9, 5, 18
+        # 2 valores inteiros importantes
+            # Infinity
+            # NaN
+    # null
+    # undefined
+    # function
+    # typeof [], {}, function(){}, undefined, NaN, Infinity, null
+
+# String(n) ou n.toString()
+
+# Templates Strings: ${variavel}
+
+# ''.length(), ''.toUpperCase(), ''.toLowerCase()
+
+# Operadores aritméticos
+    # 5 %  2 = 1    Resto da divisão inteira de 5 por 2
+    # 5 ** 2 = 25   Potência 
+
+    # Ordem de precedência dos operadores aritméticos
+        ()
+        **
+        * / %   da esquerda para direita
+        + -
+
+# Operadores relacionais
+    >= maior OU igual
+    <= menor OU igual
+    !=
+
+    # Operador de igualdade restrita ou desigualdade restrita
+        # ===
+        # mesmo valor e mesmo tipo
+        # !==
+
+# Operadores lógicos
+    !   negação     [não]   ->  operador unário, ou seja, só tem um operando (sim ou não)
+    &&  conjunção   [e]     ->  operador binário, ou seja, dois valores lógicos (true and true = true)
+    ||  disjunção   [ou]    ->  operador binário, ou seja, dois valores lógicos (um deles sendo true, resultado true) 
+
+# IMPORTANTE
+    # 1º operadores aritméticos 
+    # 2º operadores relacionais
+    # 3º operadores lógicos
+
+# Operadores ternário
+    ? :
+    # Junta três operandos  ->  teste ? true : false

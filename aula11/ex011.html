@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de bancários</title>
+</head>
+<body>
+    <h1>Comparador de bancários</h1>
+    <p>Taxa DI <strong>4.15%</strong></p>
+    CDB: <input type="number" name="txtCdbDi" id="txtCdbDi"> %DI<div id="divCdbDi"></div></br>
+    LCI: <input type="number" name="txtLciDi" id="txtLciDi"> %DI<div id="divLciDi"></div></br>
+    PRÉ: <input type="number" name="txtCdbPre" id="txtCdbPre"><div id="divCdbPre"></div></br>    
+    <input type="button" value="Comparar" onclick="comparar()">
+    <script>
+        function comparar()
+        {
+            var percentualCdb = Number(document.querySelector('input#txtCdbDi').value)
+            var percentualLci = Number(document.querySelector('input#txtLciDi').value)
+            var percentualCdbPre = Number(document.querySelector('input#txtCdbPre').value.replace(',', '.'))
+
+            var cdbDiReal = ((percentualCdb / 100) * 0.85 * 0.0415).toLocaleString('pt-BR', { style: 'percent', maximumFractionDigits: 2})
+            var lciDiReal = ((percentualLci / 100) * 1.00 * 0.0415).toLocaleString('pt-BR', { style: 'percent', maximumFractionDigits: 2})
+            var cdbPreReal = (percentualCdbPre * 0.85).toLocaleString('pt-BR', { sytle: 'percent', maximumFractionDigits: 2})
+
+            var divCdbDi = document.querySelector('div#divCdbDi')
+            divCdbDi.innerHTML = `${cdbDiReal}`
+
+            var divLciDi = document.querySelector('div#divLciDi')
+            divLciDi.innerHTML = `${lciDiReal}`
+            
+            var divCdbPre = document.querySelector('div#divCdbPre')
+            divCdbPre.innerHTML = `${cdbPreReal}%`
+        }
+    </script>
+</body>
+</html>

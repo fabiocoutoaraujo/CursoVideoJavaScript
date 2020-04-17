@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa</title>
+    <style>
+        body {
+            background-color:rgb(105,105,173);
+            color:white; /* Comentário no CSS */
+            font: normal 20pt Arial;
+        }
+        h1 {
+            color: rgb(255,212,22);
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, Mundo!</h1> <!--Comentário no html-->
+    <p>Já me livrei da maldição!</p>
+    <script>        
+        var n1 = Number(window.prompt('Digite um valor: '));
+        var n2 = Number(window.prompt('Digite outro valor: '));
+        var n3 = Number.parseInt(window.prompt('Digite o último valor (inteiro): '));
+        
+        var soma = (n1 + n2 + n3).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL' }); // USD, EUR
+        window.alert(`A soma dos valores ${n1}, ${n2} e ${n3} é ${soma}`);
+    </script>
+</body>
+</html>

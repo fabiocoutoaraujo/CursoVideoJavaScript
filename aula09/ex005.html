@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background: burlywood;
+            color: cadetblue;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos como DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScipt</p>
+    <div id="msg">Clique em mim</div>
+    <div class="msg2">Clique em mim 2</div>
+    <script>
+        window.document.write('<br><br>')
+
+        var p1 = window.document.getElementsByTagName('p')[1]        
+        window.document.write('Está escrito assim: ' + p1.innerHTML)
+        window.document.write('<br><br>')
+
+        var d = window.document.getElementById('msg')
+        d.innerHTML = 'Clique em mim 2!!!'
+        window.document.write('<br><br>')
+
+        /*querySelector ECMAScript mais recente*/
+        var q = window.document.querySelector('div#msg')
+        q.style.background = 'blue'
+
+        var q2 = window.document.querySelector('div.msg2')
+        q2.style.background = 'black'
+    </script>
+</body>
+</html>
