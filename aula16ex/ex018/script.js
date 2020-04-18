@@ -1,22 +1,63 @@
-let txtnumero = document.querySelector('input#txtnumero')
-let selnumero = document.querySelector('select#selnumero')
-let resultado = document.querySelector('p#resultado')
-let numeros = []
+const txtnumero = document.querySelector('input#txtnumero')
+const selnumero = document.querySelector('select#selnumero')
+const divresult = document.querySelector('div#resultado')
+const array = []
+let soma = 0
+let media = 0
+let menor = 0
+let maior = 0
 
-function adicionar() {    
-    if (txtnumero.value.length == 0 || txtnumero.value < 1 || txtnumero.value > 100) {
-        window.alert('Valor inválido ou já encontrado na lista.')
+function isNumero(n) {
+    return Number(n) > 0 && Number(n) < 101
+}
+
+function inLista(n, arr) {
+    return arr.indexOf(Number(n)) !== -1
+}
+
+function limpanumero() {
+    txtnumero.value = ''
+    txtnumero.focus()
+}
+
+function maiormenor(n)
+{
+    const n1 = Number(n)
+    if (array.length === 0) {
+        maior = n1
+        menor = n1
     } else {
-        let numero = txtnumero.value        
-        let item = document.createElement('option')
-        item.value = `item${numero}`
-        item.text = `Valor ${numero} adicionado.`
-        selnumero.options.add(item)        
-        numeros.push(numero)
-        resultado.innerHTML = ''
+        if (n1 > maior) {
+            maior = n1
+        }
+        if (n1 < menor) {
+            menor = n1
+        }
     }
 }
 
+function adicionar() { 
+    if (isNumero(txtnumero.value) && !inLista(txtnumero.value, array)) {
+        const n = Number(txtnumero.value)
+        soma += n
+        media = soma / array.length
+        maiormenor(n)
+        array.push(n)
+        const item = document.createElement('option')
+        item.value = `item${n}`
+        item.text = `Valor ${n} adicionado`
+        selnumero.appendChild(item)
+        divresult.innerHTML = ''
+    } else {
+        window.alert('Valor inválido ou já encontrado na lista!')
+    }
+    limpanumero()
+}
+
 function finalizar() {
-    alert('Testando integração com o GitHub');
+    divresult.innerHTML = `<p>Ao todo, temos ${array.length} números cadastrados.</p>`
+    divresult.innerHTML += `<p>O maior valor informado é ${maior}.</p>`
+    divresult.innerHTML += `<p>O menor valor informado é ${menor}.</p>`
+    divresult.innerHTML += `<p>Somando todos os valores, temos ${soma}.</p>`
+    divresult.innerHTML += `<p>A média dos valores digitados é ${media}.</p>`
 }
